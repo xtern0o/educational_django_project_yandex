@@ -3,7 +3,7 @@
 <div class="col-6 col-md-6 col-xl-4">
   <div class="card my-3 shadow">
     <a href="{% url "catalog:item_detail" item.id %}">
-      <img src="{{ item.mainimage.image.url }}" class="card-img-top item-image" alt="item-image">
+      <img src="{{ item.main_image.image.url }}" class="card-img-top item-image" alt="item-image">
     </a>
     <div class="card-body">
       <h5 class="card-title fs-5">{{ item.name }}</h5>

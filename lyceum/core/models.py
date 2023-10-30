@@ -42,7 +42,6 @@ class AbstractModelNormalizedName(django.db.models.Model):
     normalized_name = django.db.models.CharField(
         "нормализованное имя",
         max_length=300,
-        unique=True,
         default="-",
     )
 

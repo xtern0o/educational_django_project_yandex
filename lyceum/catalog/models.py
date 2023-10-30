@@ -6,7 +6,6 @@ import django.urls
 import django.utils.safestring
 import sorl.thumbnail
 
-import catalog.managers
 import catalog.validators
 import core.models
 
@@ -14,8 +13,40 @@ import core.models
 __all__ = []
 
 
+class ItemManager(django.db.models.Manager):
+    def published(self):
+        return (
+            self.get_queryset()
+            .filter(is_published=True, category__is_published=True)
+            .select_related("category", "main_image")
+            .prefetch_related(
+                django.db.models.Prefetch(
+                    "tags",
+                    queryset=catalog.models.Tag.objects.published(),
+                ),
+            )
+            .only(
+                "name",
+                "text",
+                "category__name",
+                "main_image__image",
+            )
+        )
+
+
+class TagManager(django.db.models.Manager):
+    def published(self):
+        return (
+            self.get_queryset()
+            .filter(is_published=True)
+            .only(
+                "name",
+            )
+        )
+
+
 class Item(core.models.AbstractModelNamePublished):
-    objects = catalog.managers.ItemManager()
+    objects = ItemManager()
 
     text = ckeditor.fields.RichTextField(
         "текст",
@@ -54,7 +85,7 @@ class Item(core.models.AbstractModelNamePublished):
 
     def get_image_x300(self):
         return sorl.thumbnail.get_thumbnail(
-            self.mainimage.image,
+            self.main_image.image,
             "300x300",
             crop="center",
             quality=51,
@@ -62,14 +93,14 @@ class Item(core.models.AbstractModelNamePublished):
 
     def get_image_x50(self):
         return sorl.thumbnail.get_thumbnail(
-            self.mainimage.image,
+            self.main_image.image,
             "50x50",
             crop="center",
             quality=51,
         )
 
     def image_tmb(self):
-        if self.mainimage:
+        if self.main_image:
             return django.utils.safestring.mark_safe(
                 f'<img src="{self.get_image_x300().url}">',
             )
@@ -79,7 +110,7 @@ class Item(core.models.AbstractModelNamePublished):
     image_tmb.allow_tags = True
 
     def small_image_tmb(self):
-        if self.mainimage:
+        if self.main_image:
             return django.utils.safestring.mark_safe(
                 f'<img src="{self.get_image_x50().url}">',
             )
@@ -94,7 +125,7 @@ class Tag(
     core.models.AbstractModelNormalizedName,
     core.models.AbstractModelSlug,
 ):
-    objects = catalog.managers.TagManager()
+    objects = TagManager()
 
     class Meta:
         ordering = ("name", "id")
@@ -135,6 +166,7 @@ class MainImage(core.models.AbstractImage):
         verbose_name="товар",
         on_delete=django.db.models.deletion.CASCADE,
         null=True,
+        related_name="main_image",
     )
 
     class Meta:
@@ -147,7 +179,7 @@ class Gallery(core.models.AbstractImage):
         "catalog.Item",
         verbose_name="товар",
         on_delete=django.db.models.deletion.CASCADE,
-        related_name="gallery",
+        related_name="images",
     )
 
     class Meta:
