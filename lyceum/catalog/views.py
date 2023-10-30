@@ -22,9 +22,7 @@ def item_detail(request, pk):
         .prefetch_related(
             django.db.models.Prefetch(
                 "tags",
-                queryset=catalog.models.Tag.objects.filter(
-                    is_published=True,
-                ),
+                queryset=catalog.models.Tag.objects.published(),
             ),
         )
         .only("name", "text", "main_image", "category__name"),
