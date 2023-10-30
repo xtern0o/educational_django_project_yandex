@@ -69,8 +69,9 @@ class Item(core.models.AbstractModelNamePublished):
     category = django.db.models.ForeignKey(
         "catalog.Category",
         on_delete=django.db.models.CASCADE,
-        related_name="category_name",
+        related_name="category",
         help_text="Категория товара",
+        related_query_name="category",
     )
 
     tags = django.db.models.ManyToManyField("catalog.Tag", help_text="Тег")
@@ -180,6 +181,7 @@ class Gallery(core.models.AbstractImage):
         verbose_name="товар",
         on_delete=django.db.models.deletion.CASCADE,
         related_name="images",
+        related_query_name="image",
     )
 
     class Meta:

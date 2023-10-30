@@ -123,7 +123,7 @@ class ContextTests(django.test.TestCase):
             ("catalog:item_list", 2),
         ],
     )
-    def test_homepage_published_item_count(self, app_url, correct_count):
+    def test_published_item_count(self, app_url, correct_count):
         response = django.test.Client().get(
             django.urls.reverse(app_url),
         )
