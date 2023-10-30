@@ -21,8 +21,7 @@ class ItemManager(django.db.models.Manager):
             .select_related("category", "main_image")
             .prefetch_related(
                 django.db.models.Prefetch(
-                    "tags",
-                    queryset=catalog.models.Tag.objects.published(),
+                    "tags", queryset=Tag.objects.published(),
                 ),
             )
             .only(
@@ -39,9 +38,7 @@ class TagManager(django.db.models.Manager):
         return (
             self.get_queryset()
             .filter(is_published=True)
-            .only(
-                "name",
-            )
+            .only("name")
         )
 
 
