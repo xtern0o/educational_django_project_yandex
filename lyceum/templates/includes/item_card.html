@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="col-6 col-md-6 col-xl-4">
+  <div class="card my-3 shadow">
+    <a href="{% url "catalog:item_detail" item.id %}">
+      <img src="{{ item.mainimage.image.url }}" class="card-img-top item-image" alt="item-image">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title fs-5">{{ item.name }}</h5>
+      <h4 class="card-sybtitle mb-2 text-muted fs-6">{{ item.category.name }}</h4>
+      <div class="card-text fs-6 text-muted">
+        {{ item.text|truncatewords_html:10|safe }}  
+      </div>
+      <div class="fs-6 mt-3">
+        {% for tag in item.tags.all %}
+        <span class="badge bg-secondary rounded-pill">{{ tag.name }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

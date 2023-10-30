@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% load i18n %}
+
+<html lang="{% translate 'LANG_CODE' %}">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <link rel="icon" href="{% static "img/favicon.ico" %}" type="image">
+
+    <title>{% block title %}{% endblock %}</title>
+
+  </head>
+
+  <body style="height: 100%">
+
+    <header class="p-2 text-bg-dark"s>
+      {% include "includes/header.html" %}
+    </header>
+
+    <main>
+      <div class="container my-4 bg-tertiary">
+        <div class="bg-light rounded px-5 py-1">
+          {% block content %}
+          <p class="alert alert-warning">Упс! Похоже, контента нет :(</p>
+          {% endblock %}
+        </div>
+      </div>
+    </main>
+
+    <footer style="flex: 0 0 auto">
+      {% include "includes/footer.html" %}
+    </footer>
+
+  </body>
+</html>

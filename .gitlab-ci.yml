@@ -1,0 +1,25 @@
+stages:
+  - linting
+  - testing
+
+flake8:
+  stage: linting
+  image: registry.gitlab.com/pipeline-components/flake8:latest
+  script:
+    - flake8 --verbose --exclude=migrations
+
+black:
+  stage: linting
+  image: registry.gitlab.com/pipeline-components/black:latest
+  script:
+    - black --check --verbose --config pyproject.toml .
+  
+django-testing:
+  stage: testing
+  image: python:3.11
+  script:
+    - python -m pip install --upgrade pip
+    - pip install -r requirements/prod.txt
+    - pip install -r requirements/test.txt
+    - cd lyceum
+    - python manage.py test

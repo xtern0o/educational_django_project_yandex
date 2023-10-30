@@ -1,0 +1,6 @@
+Django==4.2
+django-ckeditor==6.7.0
+django-cleanup==8.0.0
+python-dotenv==1.0.0
+pillow==10.1.0
+sorl-thumbnail==12.10.0

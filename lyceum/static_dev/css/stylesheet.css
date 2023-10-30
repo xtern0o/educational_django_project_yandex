@@ -1,0 +1,17 @@
+.image-fill {
+    width: 100%
+}
+
+.item-image {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    flex: 1;
+}

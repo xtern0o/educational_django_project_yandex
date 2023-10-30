@@ -1,0 +1,24 @@
+{% load static %}
+{% load i18n %}
+
+<div class="container">
+  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
+    <a href="{% url 'homepage:home' %}" class="fs-3 fw-bold text-white text-decoration-none">
+      <img class="bi me-2" width="32" height="32" src="{% static "img/trash-bin.png" %}">
+      {% translate "shop_name"%}
+    </a>
+    {% with request.resolver_match.view_name as view_name %}
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="{% url 'homepage:home' %}" class="nav-link px-3 {% if view_name == 'homepage:home' %}text-secondary{% else %}text-white{% endif %}">{% translate "main_page" %}</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'catalog:item_list' %}" class="nav-link px-3 {% if view_name == 'catalog:item_list' %}text-secondary{% else %}text-white{% endif %}">{% translate "list_of_items" %}</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'about:description' %}" class="nav-link px-3 {% if view_name == 'about:description' %}text-secondary{% else %}text-white{% endif %}">{% translate "about" %}</a>
+        </li>
+      </ul>
+    {% endwith %}
+  </div>
+</div>

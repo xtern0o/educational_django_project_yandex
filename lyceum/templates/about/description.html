@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block title %}
+{% translate "about" %}
+{% endblock %}
+
+{% block content %}
+<h1 class="fw-bold fs-2 mb-3">О проекте</h1>
+<div class="row my-3">
+  <div class="col-5">
+    <p class="fs-4 fw-bold text-start"><span class="badge text-bg-primary">Lorem ipsum dolor sit amet...</span></p>
+    <p class="text-muted fst-italic fs-6">
+      consectetur adipiscing elit. In sed magna eu quam maximus vestibulum at sed mi. Suspendisse eget egestas dolor. Nullam eu porta augue, ac feugiat sem. Quisque facilisis in quam eget feugiat. Aenean vel egestas mi. Cras pellentesque sem vehicula consequat cursus. Vivamus maximus ex non metus ullamcorper laoreet. Duis sed facilisis sapien. Nulla rhoncus enim vel molestie mollis.
+    </p>
+  </div>
+  <div class="col-7">
+    <p class="fs-4 fw-bold text-end"><span class="badge text-bg-danger">Integer augue urna...</span></p>
+    <p class="text-muted fst-italic fs-6">
+      rhoncus eget elementum sit amet, gravida ac lectus. Quisque mollis enim in ipsum dapibus, in imperdiet ligula dapibus. Aenean dignissim volutpat lacus, et fermentum urna sagittis et. Cras non est in urna auctor sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum aliquam felis in elit condimentum, a congue sem ullamcorper. Nam hendrerit egestas dolor et faucibus. Nunc accumsan dolor sed bibendum posuere. Integer pellentesque nisl iaculis, mollis magna sit amet, volutpat enim. Cras tempor mauris eu varius mollis. Duis ultricies, ante accumsan vulputate mattis, diam nisi ultrices dolor, quis consequat mauris nulla at sapien. Maecenas auctor finibus viverra.
+    </p>
+  </div>
+</div>
+{% endblock %}

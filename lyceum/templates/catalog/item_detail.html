@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static thumbnail %}
+
+{% block title %}{{ item.name }}{% endblock %}
+
+{% block content %}
+
+<h2 class="fw-bold fs-3 my-2 text-center">{{ item.name }}</h2>
+<div class="my-3 mx-2 row">
+  <div class="col-sm-6 col-md-4 col-xl-3">
+    <img src="{{ item.mainimage.image.url }}" class="image-fill rounded img-thumbnail mx-auto" alt="item-image">
+  </div>
+  <div class="col mx-4">
+    <div class="row my-2">
+      <div class="col-sm-4 col-md-3 col-xl-2">
+        <p class="fs-6 fw-bold">Категория</p>
+      </div>
+      <div class="col fs-6 text-muted fw-bold">
+        {{ item.category.name }}
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-sm-4 col-md-3 col-xl-2">
+        <p class="fs-6 fw-bold">Теги</p>
+      </div>
+      <div class="col fs-6 text-muted fw-bold">
+        {% for tag in item.tags.all %}
+        <span class="badge bg-secondary rounded-pill">{{ tag.name }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-sm-4 col-md-3 col-xl-2">
+        <p class="fs-6 fw-bold">Информация о товаре</p>
+      </div>
+      <div class="col fs-6 text-muted">
+        {{ item.text|safe }}
+      </div>
+    </div>     
+  </div>
+</div>
+
+<!-- Карусель у меня не работает, даже пример с документации.
+Пробовал переустанавливать бутстрап, джс, ничего не помогло. -->
+
+<h2 class="fw-bold fs-3 my-2 text-center">Галерея</h2>
+<div class="my-3 row">
+  {% for image in item.gallery.all %}
+  {% thumbnail image.image "400x300" crop="center" as img %}
+    <div class="col-sm-6 col-md-4 col-xl-3">
+      <a href="{{ image.image.url }}">
+        <img src="{{ img.url }}" class="image-fill rounded img-fluid mx-auto" alt="gallery-image">
+      </a>
+    </div>
+  {% endthumbnail %}
+  {% empty %}
+  <div class="alert alert-dark">
+    <h4 class="alert-heading">В галерее нет ни одной фотографии</h4>
+    <p> Пока что картинки добавлять нельзя, обратитесь к администраторам :) </p>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

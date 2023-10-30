@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block title %}
+{% translate "list_of_items" %}
+{% endblock %}
+
+{% block content %}
+<div class="my-2 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between border-bottom">
+  <h1 class="fw-bold fs-2 mb-3">Опубликованные товары</h1>
+  <a href="#" class="btn btn-outline-success">Добавить товар</a>
+</div>
+<div class="container my-2 py-2 px-3">
+  <div class="row">
+    {% for item in items %}
+    {% include "includes/item_card.html" %}
+    {% empty %}
+    <div class="alert alert-dark">
+      <h4 class="alert-heading">Упс! Похоже, товаров нет.</h4>
+      <p>Попробуйте заглянуть в другое время или добавьте сами. Также можете проверить, корректно ли настроен фильтр.
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
