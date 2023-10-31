@@ -47,7 +47,10 @@ class AbstractModelNormalizedName(django.db.models.Model):
 
     def clean(self):
         if self._normalize_name(self.name) in [
-            n.normalized_name for n in type(self).objects.all().exclude(
+            n.normalized_name
+            for n in type(self)
+            .objects.all()
+            .exclude(
                 pk=self.pk,
             )
         ]:
