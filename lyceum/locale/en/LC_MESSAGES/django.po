@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 22:20+0300\n"
+"POT-Creation-Date: 2023-10-31 22:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,21 +26,24 @@ msgstr "Russian"
 msgid "English"
 msgstr "English"
 
+#: .\templates\about\description.html:6 .\templates\includes\footer.html:8
+#: .\templates\includes\header.html:19
+msgid "about"
+msgstr "About"
+
 #: .\templates\base.html:6
 msgid "LANG_CODE"
 msgstr "en"
 
-#: .\templates\includes\footer.html:6 .\templates\includes\header.html:13
-msgid "main_page"
-msgstr "Main"
-
-#: .\templates\includes\footer.html:7 .\templates\includes\header.html:16
+#: .\templates\catalog\item_list.html:6 .\templates\includes\footer.html:7
+#: .\templates\includes\header.html:16
 msgid "list_of_items"
 msgstr "List of items"
 
-#: .\templates\includes\footer.html:8 .\templates\includes\header.html:19
-msgid "about"
-msgstr "About"
+#: .\templates\homepage\home.html:6 .\templates\includes\footer.html:6
+#: .\templates\includes\header.html:13
+msgid "main_page"
+msgstr "Main"
 
 #: .\templates\includes\footer.html:30
 msgid "by_mk"
@@ -49,3 +52,7 @@ msgstr "Made by: Karnazhitskiy Maksim"
 #: .\templates\includes\header.html:8
 msgid "shop_name"
 msgstr "shop..."
+
+#: .\templates\includes\header.html:23
+msgid "admin"
+msgstr "Admin"
