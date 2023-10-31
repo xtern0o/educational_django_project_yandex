@@ -129,3 +129,21 @@ class ContextTests(django.test.TestCase):
         )
         items = response.context["items"]
         self.assertEqual(len(items), correct_count)
+
+    @parameterized.parameterized.expand(
+        [
+            ("homepage:home"), ("catalog:item_list"),
+        ],
+    )
+    def test_excluding_bad_attributes_in_querysets(self, app_url):
+        response = django.test.Client().get(
+            django.urls.reverse(app_url),
+        )
+        items = response.context["items"]
+        item_attributes = items[0].__dict__
+        tag_attributes = item_attributes["_prefetched_objects_cache"][
+            "tags"
+        ][0].__dict__
+        self.assertNotIn("is_published", item_attributes)
+        self.assertNotIn("images", item_attributes)
+        self.assertNotIn("is_published", tag_attributes)

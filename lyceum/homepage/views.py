@@ -9,11 +9,7 @@ __all__ = []
 
 def home(request):
     template = "homepage/home.html"
-    items = (
-        catalog.models.Item.objects.published()
-        .filter(is_on_main=True)
-        .order_by("name")
-    )
+    items = catalog.models.Item.objects.on_main()
     context = {
         "items": items,
     }

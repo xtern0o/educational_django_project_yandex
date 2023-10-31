@@ -42,7 +42,21 @@ class ItemAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     exclude = (catalog.models.Category.normalized_name.field.name,)
 
+    list_display = (
+        catalog.models.Category.name.field.name,
+        catalog.models.Category.is_published.field.name,
+    )
+
+    list_editable = (catalog.models.Category.is_published.field.name,)
+
 
 @admin.register(catalog.models.Tag)
 class TagAdmin(admin.ModelAdmin):
     exclude = (catalog.models.Tag.normalized_name.field.name,)
+
+    list_display = (
+        catalog.models.Tag.name.field.name,
+        catalog.models.Tag.is_published.field.name,
+    )
+
+    list_editable = (catalog.models.Tag.is_published.field.name,)

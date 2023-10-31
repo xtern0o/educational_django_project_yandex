@@ -1,3 +1,4 @@
+import django.db
 import django.shortcuts
 
 import catalog.models
@@ -9,8 +10,10 @@ __all__ = []
 def item_list(request):
     template = "catalog/item_list.html"
     items = catalog.models.Item.objects.published().order_by("category__name")
+    cycle_list = ["1", "2", "3"]
     context = {
         "items": items,
+        "cycle_list": cycle_list,
     }
     return django.shortcuts.render(request, template, context)
 

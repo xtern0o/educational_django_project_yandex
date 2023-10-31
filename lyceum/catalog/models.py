@@ -17,8 +17,8 @@ class ItemManager(django.db.models.Manager):
     def published(self):
         return (
             self.get_queryset()
-            .select_related("category", "main_image")
             .filter(is_published=True, category__is_published=True)
+            .select_related("category", "main_image")
             .prefetch_related(
                 django.db.models.Prefetch(
                     "tags",
@@ -32,6 +32,9 @@ class ItemManager(django.db.models.Manager):
                 "main_image__image",
             )
         )
+
+    def on_main(self):
+        return self.published().filter(is_on_main=True).order_by("name")
 
 
 class TagManager(django.db.models.Manager):
