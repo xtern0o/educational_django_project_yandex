@@ -1,8 +1,7 @@
-import datetime
-
 import django.db.models.query
 import django.test
 import django.urls
+import django.utils.timezone
 import parameterized
 
 import catalog.models
@@ -164,14 +163,18 @@ class ContextTests(django.test.TestCase):
             django.urls.reverse("catalog:items_friday"),
         )
         items = response.context["items"]
-        if datetime.datetime.today().weekday() == 6:
+        if django.utils.timezone.now().weekday() == 6:
             self.assertEqual(len(items), 2)
         else:
             self.assertEqual(len(items), 0)
 
     def test_context_unverified(self):
+        self.published_item.text = "роскошно!"
+        self.published_item.clean()
+        self.published_item.save()
+
         response = django.test.Client().get(
             django.urls.reverse("catalog:items_unverified"),
         )
         items = response.context["items"]
-        self.assertEqual(len(items), 2)
+        self.assertEqual(len(items), 1)

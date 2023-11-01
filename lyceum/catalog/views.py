@@ -42,7 +42,7 @@ def item_detail(request, pk):
 
 def catalog_new(request):
     template = "catalog/item_list.html"
-    end_date = datetime.datetime.now()
+    end_date = django.utils.timezone.now()
     start_date = end_date - datetime.timedelta(days=7)
     items = (
         catalog.models.Item.objects.published()
