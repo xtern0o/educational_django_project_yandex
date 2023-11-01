@@ -9,7 +9,10 @@
 <h2 class="fw-bold fs-3 my-2 text-center">{{ item.name }}</h2>
 <div class="my-3 mx-2 row">
   <div class="col-sm-6 col-md-4 col-xl-3">
-    <img src="{{ item.main_image.image.url }}" class="image-fill rounded img-thumbnail mx-auto" alt="item-image">
+    <a href="{{ item.main_image.image.url }}">
+      <img src="{{ item.main_image.image.url }}" class="image-fill rounded img-thumbnail mx-auto" alt="item-image">
+    </a>
+    <a class="btn btn-outline-secondary btn-sm d-grid gap-2 mt-1 nb-2" href="{{ item.main_image.image.url }}" download>Скачать картинку</a>
   </div>
   <div class="col mx-4">
     <div class="row my-2">
@@ -52,6 +55,7 @@
       <a href="{{ image.image.url }}">
         <img src="{{ img.url }}" class="image-fill rounded img-fluid mx-auto" alt="gallery-image">
       </a>
+      <a class="btn btn-outline-secondary btn-sm d-grid gap-2 mt-1 nb-2" href="{{ image.image.url }}" download>Скачать картинку</a>
     </div>
   {% endthumbnail %}
   {% empty %}

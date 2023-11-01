@@ -73,6 +73,15 @@ class Item(core.models.AbstractModelNamePublished):
 
     tags = django.db.models.ManyToManyField("catalog.Tag", help_text="Тег")
 
+    created_at = django.db.models.DateTimeField(
+        "время создания",
+        auto_now_add=True,
+    )
+    updated_at = django.db.models.DateTimeField(
+        "время последнего изменения",
+        auto_now=True,
+    )
+
     class Meta:
         ordering = ("name", "id")
         verbose_name = "товар"

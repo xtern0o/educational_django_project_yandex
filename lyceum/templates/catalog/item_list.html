@@ -7,10 +7,16 @@
 {% endblock %}
 
 {% block content %}
+{% with request.resolver_match.view_name as view_name %}
 <div class="my-2 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between border-bottom">
   <h1 class="fw-bold fs-2 mb-3">Опубликованные товары</h1>
-  <a href="#" class="btn btn-outline-success">Добавить товар</a>
+  <div class="btn-group">
+    <a href="{% url 'catalog:items_new' %}" class="btn btn-outline-success {% if view_name == "catalog:items_new" %}active{% endif %}">Новинки</a>
+    <a href="{% url 'catalog:items_friday' %}" class="btn btn-outline-success {% if view_name == "catalog:items_friday" %}active{% endif %}">Пятница</a>
+    <a href="{% url 'catalog:items_unverified' %}" class="btn btn-outline-success {% if view_name == "catalog:items_unverified" %}active{% endif %}">Неподтвержденные</a>
+  </div>
 </div>
+{% endwith %}
 <div class="container my-2 py-2 px-3">
   <div class="row">
     {% for item in items %}

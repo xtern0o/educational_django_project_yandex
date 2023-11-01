@@ -30,6 +30,7 @@ ALLOW_REVERSE = load_bool_env("DJANGO_ALLOW_REVERSE", False)
 INSTALLED_APPS = [
     "about.apps.AboutConfig",
     "catalog.apps.CatalogConfig",
+    "download.apps.DownloadConfig",
     "homepage.apps.HomepageConfig",
     "django.contrib.admin",
     "django.contrib.auth",
