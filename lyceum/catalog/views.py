@@ -77,8 +77,19 @@ def catalog_changed_on_friday(request):
 
 def catalog_unverified(request):
     template = "catalog/item_list.html"
-    items = catalog.models.Item.objects.published().filter(
-        created_at=django.db.models.F("updated_at"),
+    items = (
+        catalog.models.Item.objects.published()
+        .annotate(
+            time_diff=django.db.models.ExpressionWrapper(
+                django.db.models.F("updated_at") - django.db.models.F(
+                    "created_at",
+                ),
+                output_field=django.db.models.DurationField(),
+            ),
+        )
+        .filter(
+            time_diff__lte=datetime.timedelta(seconds=1),
+        )
     )
     context = {
         "items": items,
