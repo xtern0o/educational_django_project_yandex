@@ -1,3 +1,5 @@
+import datetime
+
 import django.db.models.query
 import django.test
 import django.urls
@@ -40,6 +42,7 @@ class ContextTests(django.test.TestCase):
             category=cls.published_category,
             text="роскошно",
         )
+
         cls.published_item_on_main = catalog.models.Item(
             name="Published on main item",
             category=cls.published_category,
@@ -148,3 +151,27 @@ class ContextTests(django.test.TestCase):
         self.assertNotIn("is_published", item_attributes)
         self.assertNotIn("images", item_attributes)
         self.assertNotIn("is_published", tag_attributes)
+
+    def test_context_new(self):
+        response = django.test.Client().get(
+            django.urls.reverse("catalog:items_new"),
+        )
+        items = response.context["items"]
+        self.assertEqual(len(items), 2)
+
+    def test_context_friday(self):
+        response = django.test.Client().get(
+            django.urls.reverse("catalog:items_friday"),
+        )
+        items = response.context["items"]
+        if datetime.datetime.today().weekday() == 6:
+            self.assertEqual(len(items), 2)
+        else:
+            self.assertEqual(len(items), 0)
+
+    def test_context_unverified(self):
+        response = django.test.Client().get(
+            django.urls.reverse("catalog:items_unverified"),
+        )
+        items = response.context["items"]
+        self.assertEqual(len(items), 2)

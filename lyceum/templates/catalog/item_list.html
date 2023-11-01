@@ -13,7 +13,7 @@
   <div class="btn-group">
     <a href="{% url 'catalog:items_new' %}" class="btn btn-outline-success {% if view_name == "catalog:items_new" %}active{% endif %}">Новинки</a>
     <a href="{% url 'catalog:items_friday' %}" class="btn btn-outline-success {% if view_name == "catalog:items_friday" %}active{% endif %}">Пятница</a>
-    <a href="{% url 'catalog:items_unverified' %}" class="btn btn-outline-success {% if view_name == "catalog:items_unverified" %}active{% endif %}">Неподтвержденные</a>
+    <a href="{% url 'catalog:items_unverified' %}" class="btn btn-outline-success {% if view_name == "catalog:items_unverified" %}active{% endif %}">Непроверенное</a>
   </div>
 </div>
 {% endwith %}

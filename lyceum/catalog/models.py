@@ -76,10 +76,12 @@ class Item(core.models.AbstractModelNamePublished):
     created_at = django.db.models.DateTimeField(
         "время создания",
         auto_now_add=True,
+        null=True,
     )
     updated_at = django.db.models.DateTimeField(
         "время последнего изменения",
         auto_now=True,
+        null=True,
     )
 
     class Meta:

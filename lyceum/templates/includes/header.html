@@ -10,13 +10,13 @@
     {% with request.resolver_match.view_name as view_name %}
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a href="{% url 'homepage:home' %}" class="nav-link px-3 {% if view_name == 'homepage:home' %}text-secondary{% else %}text-white{% endif %}">{% translate "main_page" %}</a>
+          <a href="{% url 'homepage:home' %}" class="nav-link px-3 {% if view_name == 'homepage:home' %}text-secondary disabled{% else %}text-white{% endif %}">{% translate "main_page" %}</a>
         </li>
         <li class="nav-item">
-          <a href="{% url 'catalog:item_list' %}" class="nav-link px-3 {% if view_name == 'catalog:item_list' %}text-secondary{% else %}text-white{% endif %}">{% translate "list_of_items" %}</a>
+          <a href="{% url 'catalog:item_list' %}" class="nav-link px-3 {% if view_name == 'catalog:item_list' %}text-secondary disabled{% else %}text-white{% endif %}">{% translate "list_of_items" %}</a>
         </li>
         <li class="nav-item">
-          <a href="{% url 'about:description' %}" class="nav-link px-3 {% if view_name == 'about:description' %}text-secondary{% else %}text-white{% endif %}">{% translate "about" %}</a>
+          <a href="{% url 'about:description' %}" class="nav-link px-3 {% if view_name == 'about:description' %}text-secondary disabled{% else %}text-white{% endif %}">{% translate "about" %}</a>
         </li>
         {% if user.is_superuser %}
         <li class="nav-item">
