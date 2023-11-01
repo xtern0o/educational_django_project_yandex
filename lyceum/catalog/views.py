@@ -77,6 +77,8 @@ def catalog_changed_on_friday(request):
 
 def catalog_unverified(request):
     template = "catalog/item_list.html"
+    # Сравниваю через разницу в 200мс, так как 2 поля
+    # заполняются не одновременно
     items = (
         catalog.models.Item.objects.published()
         .annotate(
@@ -89,7 +91,7 @@ def catalog_unverified(request):
             ),
         )
         .filter(
-            time_diff__lte=datetime.timedelta(seconds=1),
+            time_diff__lte=datetime.timedelta(milliseconds=200),
         )
     )
     context = {

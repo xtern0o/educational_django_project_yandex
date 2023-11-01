@@ -1,7 +1,7 @@
 import django.shortcuts
 
 
-__all__ = ["description"]
+__all__ = []
 
 
 def description(request):

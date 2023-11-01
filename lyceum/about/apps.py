@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-__all__ = ["AboutConfig"]
+__all__ = []
 
 
 class AboutConfig(AppConfig):
