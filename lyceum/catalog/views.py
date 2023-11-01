@@ -81,7 +81,8 @@ def catalog_unverified(request):
         catalog.models.Item.objects.published()
         .annotate(
             time_diff=django.db.models.ExpressionWrapper(
-                django.db.models.F("updated_at") - django.db.models.F(
+                django.db.models.F("updated_at")
+                - django.db.models.F(
                     "created_at",
                 ),
                 output_field=django.db.models.DurationField(),
