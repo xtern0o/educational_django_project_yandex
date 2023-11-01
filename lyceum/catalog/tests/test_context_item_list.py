@@ -172,7 +172,6 @@ class ContextTests(django.test.TestCase):
         self.published_item.text = "роскошно!"
         self.published_item.clean()
         self.published_item.save()
-
         response = django.test.Client().get(
             django.urls.reverse("catalog:items_unverified"),
         )
