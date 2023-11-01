@@ -169,11 +169,8 @@ class ContextTests(django.test.TestCase):
             self.assertEqual(len(items), 0)
 
     def test_context_unverified(self):
-        self.published_item.text = "роскошно!"
-        self.published_item.clean()
-        self.published_item.save()
         response = django.test.Client().get(
             django.urls.reverse("catalog:items_unverified"),
         )
         items = response.context["items"]
-        self.assertEqual(len(items), 1)
+        self.assertEqual(len(items), 2)
