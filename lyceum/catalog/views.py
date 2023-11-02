@@ -22,14 +22,7 @@ def item_list(request):
 def item_detail(request, pk):
     template = "catalog/item_detail.html"
     item = django.shortcuts.get_object_or_404(
-        catalog.models.Item.objects.filter(is_published=True)
-        .prefetch_related(
-            django.db.models.Prefetch(
-                "tags",
-                queryset=catalog.models.Tag.objects.published(),
-            ),
-        )
-        .only("name", "text", "main_image", "category__name"),
+        catalog.models.Item.objects.published(),
         pk=pk,
     )
     context = {
@@ -75,7 +68,7 @@ def catalog_changed_on_friday(request):
 
 def catalog_unverified(request):
     template = "catalog/item_list.html"
-    # Сравниваю через разницу в 200мс, так как 2 поля
+    # Сравниваю через разницу в 1с, так как 2 поля
     # заполняются не одновременно
     items = (
         catalog.models.Item.objects.published()
@@ -89,7 +82,7 @@ def catalog_unverified(request):
             ),
         )
         .filter(
-            time_diff__lte=datetime.timedelta(milliseconds=200),
+            time_diff__lte=datetime.timedelta(seconds=1),
         )
     )
     context = {
