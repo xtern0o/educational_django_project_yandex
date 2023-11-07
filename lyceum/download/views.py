@@ -1,4 +1,4 @@
-import os
+import pathlib
 
 import django.conf
 import django.http
@@ -9,15 +9,17 @@ __all__ = []
 
 
 def download(request, img_path):
-    file_path = os.path.join(django.conf.settings.MEDIA_ROOT, img_path)
-    if os.path.exists(file_path):
-        with open(file_path, "rb") as img:
+    media_path = pathlib.Path(django.conf.settings.MEDIA_ROOT)
+    img_path_lib = pathlib.Path(img_path)
+    file_path = pathlib.Path(media_path / img_path_lib)
+    if file_path.exists():
+        with file_path.open("rb") as img:
             response = django.http.HttpResponse(
                 img.read(),
                 content_type="application/adminupload",
             )
-            response[
-                "Content-Disposition"
-            ] = "inline;filename=" + os.path.basename(img_path)
+            response["Content-Disposition"] = (
+                "inline;filename=" + img_path_lib.name
+            )
             return response
     raise django.http.Http404

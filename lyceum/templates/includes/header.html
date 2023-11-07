@@ -18,6 +18,9 @@
         <li class="nav-item">
           <a href="{% url 'about:description' %}" class="nav-link px-3 {% if view_name == 'about:description' %}text-secondary disabled{% else %}text-white{% endif %}">{% translate "about" %}</a>
         </li>
+        <li class="nav-item">
+          <a href="{% url 'feedback:feedback' %}" class="nav-link px-3 {% if view_name == 'feedback:feedback' %}text-secondary disabled{% else %}text-white{% endif %}">{% translate "feedback" %}</a>
+        </li>
         {% if user.is_superuser %}
         <li class="nav-item">
           <a href="{% url 'admin:index' %}" class="nav-link px-3">{% translate "admin" %}</a>

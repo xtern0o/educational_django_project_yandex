@@ -7,7 +7,7 @@ import feedback.models
 __all__ = []
 
 
-class FeedbackForm(django.forms.Form):
+class FeedbackForm(django.forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.visible_fields():

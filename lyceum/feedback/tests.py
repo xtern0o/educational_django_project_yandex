@@ -3,6 +3,10 @@ import django.urls
 import parameterized
 
 import feedback.forms
+import feedback.models
+
+
+__all__ = []
 
 
 class FeedbackTests(django.test.TestCase):
@@ -69,3 +73,29 @@ class FeedbackTests(django.test.TestCase):
         form = feedback.forms.FeedbackForm(form_data)
         self.assertFalse(form.is_valid())
         self.assertIn("Некорректный e-mail адрес", form.errors["mail"])
+
+    def test_save_form(self):
+        form_data = {
+            "text": "some text",
+            "mail": "test@mail.com",
+        }
+        count = feedback.models.FeedbackModel.objects.count()
+        django.test.Client().post(
+            django.urls.reverse("feedback:feedback"),
+            data=form_data,
+            follow=True,
+        )
+        self.assertEqual(
+            feedback.models.FeedbackModel.objects.count(),
+            count + 1,
+        )
+
+    def test_empty_fields(self):
+        form_data = {
+            "text": "",
+            "mail": "",
+        }
+        form = feedback.forms.FeedbackForm(form_data)
+        self.assertFalse(form.is_valid())
+        self.assertTrue(form.has_error("mail"))
+        self.assertTrue(form.has_error("text"))

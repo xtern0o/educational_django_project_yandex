@@ -1,6 +1,9 @@
 import django.forms
 
 
+__all__ = []
+
+
 class EchoForm(django.forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -8,7 +11,7 @@ class EchoForm(django.forms.Form):
             field.field.widget.attrs["class"] = "form-control my-1"
 
     text = django.forms.CharField(
-        widget=django.forms.Textarea,
+        widget=django.forms.Textarea(),
         help_text="Введите текст",
         label="текст",
     )

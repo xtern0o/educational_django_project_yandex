@@ -162,3 +162,4 @@ cython_debug/
 .idea/
 .editorconfig
 cache
+send_mail

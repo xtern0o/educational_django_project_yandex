@@ -34,10 +34,12 @@ def echo(request):
 
 def echo_submit(request):
     if request.method == "POST":
-        form = homepage.forms.EchoForm()
+        form = homepage.forms.EchoForm(request.POST)
         if form.is_valid():
             text = form.cleaned_data["text"]
             return django.http.HttpResponse(
-                text, content_type="text/plain", charset="utf-8",
+                text,
+                content_type="text/plain",
+                charset="utf-8",
             )
     return django.http.HttpResponseNotAllowed(["POST"])
