@@ -40,6 +40,5 @@ def echo_submit(request):
             return django.http.HttpResponse(
                 text,
                 content_type="text/plain; charset=utf-8",
-                charset="utf-8",
             )
     return django.http.HttpResponseNotAllowed(["POST"])
