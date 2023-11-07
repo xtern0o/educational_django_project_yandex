@@ -18,7 +18,7 @@ class ReverseRussianWordsMiddleware(django.utils.deprecation.MiddlewareMixin):
 
         if django.conf.settings.ALLOW_REVERSE and self.request_counter == 10:
             self.request_counter = 0
-            response.content = self.reverse_russian_words(
+            response.content = self._reverse_russian_words(
                 response.content.decode("utf-8"),
             )
             return response
@@ -26,7 +26,7 @@ class ReverseRussianWordsMiddleware(django.utils.deprecation.MiddlewareMixin):
         return response
 
     @staticmethod
-    def reverse_russian_words(s):
+    def _reverse_russian_words(s):
         russian_words_pattern = re.compile(r"^\b[а-яА-яЁё]+\b$")
         words = re.findall(r"\w+|\w+", s)
         new_words = []
