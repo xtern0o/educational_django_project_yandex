@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-31 22:29+0300\n"
+"POT-Creation-Date: 2023-11-06 16:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\lyceum\settings.py:117
+#: .\lyceum\settings.py:118
 msgid "Russian"
 msgstr "Русский"
 
-#: .\lyceum\settings.py:118
+#: .\lyceum\settings.py:119
 msgid "English"
 msgstr "Английский"
 
@@ -47,7 +47,11 @@ msgstr "Список товаров"
 msgid "main_page"
 msgstr "Главная"
 
-#: .\templates\includes\footer.html:30
+#: .\templates\includes\footer.html:9
+msgid "feedback"
+msgstr "Обратная связь"
+
+#: .\templates\includes\footer.html:31
 msgid "by_mk"
 msgstr "Выполнил: Карнажицкий Максим"
 

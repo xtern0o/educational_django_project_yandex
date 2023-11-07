@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Echo
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <div class="mx-1 my-2">
+    <div class="my-3">
+      {{ form.as_p }}
+    </div>
+  </div>
+  <input type="submit" class="btn btn-primary mb-2">
+</form>
+{% endblock %}

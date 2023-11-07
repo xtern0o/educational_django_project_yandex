@@ -25,19 +25,16 @@ class ReverseRussianWordsMiddleware(django.utils.deprecation.MiddlewareMixin):
 
         return response
 
-    def reverse_russian_words(self, s):
-        words = re.split(r"(\W+)", s)
-        reversed_words = [
-            word[::-1]
-            if not re.match(r"\W+", word) and self.is_russian_word(word)
-            else word
-            for word in words
-        ]
-        reversed_string = "".join(reversed_words)
-        return reversed_string
-
-    def is_russian_word(self, word):
-        for char in word:
-            if char.isalpha() and not 1072 <= ord(char.lower()) <= 1103:
-                return False
-        return True
+    @staticmethod
+    def reverse_russian_words(s):
+        russian_words_pattern = re.compile(r"^\b[а-яА-яЁё]+\b$")
+        words = re.findall(r"\w+|\w+", s)
+        new_words = []
+        for word in words:
+            if re.fullmatch(russian_words_pattern, word):
+                reversed_word = word[::-1]
+                new_words.append(reversed_word)
+            else:
+                new_words.append(word)
+        pattern = re.compile(r"\b(" + "|".join(map(re.escape, words)) + r")\b")
+        return pattern.sub(lambda x: new_words.pop(0), s)

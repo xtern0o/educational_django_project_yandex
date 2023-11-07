@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-31 22:29+0300\n"
+"POT-Creation-Date: 2023-11-06 16:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\lyceum\settings.py:117
+#: .\lyceum\settings.py:118
 msgid "Russian"
 msgstr "Russian"
 
-#: .\lyceum\settings.py:118
+#: .\lyceum\settings.py:119
 msgid "English"
 msgstr "English"
 
@@ -45,7 +45,11 @@ msgstr "List of items"
 msgid "main_page"
 msgstr "Main"
 
-#: .\templates\includes\footer.html:30
+#: .\templates\includes\footer.html:9
+msgid "feedback"
+msgstr "Feedback"
+
+#: .\templates\includes\footer.html:31
 msgid "by_mk"
 msgstr "Made by: Karnazhitskiy Maksim"
 

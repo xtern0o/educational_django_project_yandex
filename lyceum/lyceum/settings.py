@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "about.apps.AboutConfig",
     "catalog.apps.CatalogConfig",
     "download.apps.DownloadConfig",
+    "feedback.apps.FeedbackConfig",
     "homepage.apps.HomepageConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -166,3 +167,7 @@ CKEDITOR_CONFIGS = {
         ],
     },
 }
+
+EMAIL_ADDRESS = os.getenv("DJANGO_MAIL", "NO-MAIL")
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
