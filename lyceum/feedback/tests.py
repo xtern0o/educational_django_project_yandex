@@ -89,7 +89,6 @@ class FeedbackTests(django.test.TestCase):
         self.assertFalse(form.is_valid())
         self.assertTrue(form.has_error("mail"))
         self.assertTrue(form.has_error("text"))
-        self.assertTrue(form.has_error("name"))
 
     def test_save_correct_feedback_form_in_model(self):
         form_data = {

@@ -36,3 +36,19 @@ class FeedbackModelAdmin(admin.ModelAdmin):
             )
 
         super().save_model(request, obj, form, change)
+
+
+@admin.register(feedback.models.StatusLog)
+class StatusLogAdmin(admin.ModelAdmin):
+    list_display = (
+        feedback.models.StatusLog.user.field.name,
+        feedback.models.StatusLog.from_status.field.name,
+        feedback.models.StatusLog.to.field.name,
+    )
+
+    readonly_fields = (
+        feedback.models.StatusLog.timestamp.field.name,
+        feedback.models.StatusLog.user.field.name,
+        feedback.models.StatusLog.from_status.field.name,
+        feedback.models.StatusLog.to.field.name,
+    )

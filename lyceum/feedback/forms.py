@@ -17,6 +17,7 @@ class FeedbackForm(django.forms.ModelForm):
     name = django.forms.CharField(
         label="Имя отправителя",
         help_text="Имя, указанное в качестве автора письма",
+        required=False,
     )
 
     text = django.forms.CharField(
