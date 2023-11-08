@@ -46,7 +46,6 @@ def catalog_new(request):
         .order_by("?")
     )[:5]
     items = sorted(items, key=lambda item: item.category.name)
-    # да, возможно костыли, но зато без использования regroup...
     context = {
         "items": items,
     }
