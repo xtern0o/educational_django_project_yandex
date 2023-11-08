@@ -97,14 +97,14 @@ class FeedbackTests(django.test.TestCase):
             "mail": "test@mail.com",
             "name": "Some Name",
         }
-        count = feedback.models.FeedbackModel.objects.count()
+        count = feedback.models.Feedback.objects.count()
         django.test.Client().post(
             django.urls.reverse("feedback:feedback"),
             data=form_data,
             follow=True,
         )
         self.assertEqual(
-            feedback.models.FeedbackModel.objects.count(),
+            feedback.models.Feedback.objects.count(),
             count + 1,
         )
 
@@ -114,13 +114,13 @@ class FeedbackTests(django.test.TestCase):
             "mail": "a@ma.a",
             "name": "Some Name",
         }
-        count = feedback.models.FeedbackModel.objects.count()
+        count = feedback.models.Feedback.objects.count()
         django.test.Client().post(
             django.urls.reverse("feedback:feedback"),
             data=form_data,
             follow=True,
         )
         self.assertEqual(
-            feedback.models.FeedbackModel.objects.count(),
+            feedback.models.Feedback.objects.count(),
             count,
         )

@@ -18,13 +18,11 @@ def feedback_view(request):
             text = form.cleaned_data.get("text")
             mail = form.cleaned_data.get("mail")
             name = form.cleaned_data.get("name")
-            new_feedback = feedback.models.FeedbackModel.objects.create(
+            feedback.models.Feedback.objects.create(
                 text=text,
                 mail=mail,
                 name=name,
             )
-            new_feedback.full_clean()
-            new_feedback.save()
 
             django.core.mail.send_mail(
                 "FROM: {}".format(mail),
@@ -37,7 +35,6 @@ def feedback_view(request):
             django.contrib.messages.success(
                 request=request,
                 message="Форма успешно отправлена! Спасибо за Ваш отзыв!",
-                extra_tags="alert alert-success",
             )
 
             return django.shortcuts.redirect("feedback:feedback")
