@@ -17,9 +17,11 @@ def feedback_view(request):
         if form.is_valid():
             text = form.cleaned_data.get("text")
             mail = form.cleaned_data.get("mail")
+            name = form.cleaned_data.get("name")
             new_feedback = feedback.models.FeedbackModel.objects.create(
                 text=text,
                 mail=mail,
+                name=name,
             )
             new_feedback.full_clean()
             new_feedback.save()

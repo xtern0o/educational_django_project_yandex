@@ -14,6 +14,11 @@ class FeedbackForm(django.forms.ModelForm):
             field.field.widget.attrs["class"] = "form-control my-1"
             field.field.widget.attrs["placeholder"] = field.field.label
 
+    name = django.forms.CharField(
+        label="Имя отправителя",
+        help_text="Имя, указанное в качестве автора письма",
+    )
+
     text = django.forms.CharField(
         label="Ваш текст",
         help_text="Ваши впечатления, вопросы",
@@ -32,4 +37,4 @@ class FeedbackForm(django.forms.ModelForm):
 
     class Meta:
         model = feedback.models.FeedbackModel
-        exclude = ["text", "mail", "created_on"]
+        exclude = ["name", "text", "mail", "created_on", "status"]
