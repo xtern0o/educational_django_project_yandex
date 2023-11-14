@@ -2,6 +2,7 @@ import pathlib
 
 import django.contrib.auth.models
 import django.db
+import sorl
 
 
 __all__ = []
@@ -57,6 +58,24 @@ class Profile(django.db.models.Model):
         "счётчик кофе",
         default=0,
     )
+
+    def get_image_x300(self):
+        return sorl.thumbnail.get_thumbnail(
+            self.image,
+            "300x300",
+            crop="center",
+            quality=51,
+        )
+
+    def image_tmb(self):
+        if self.image:
+            return django.utils.safestring.mark_safe(
+                f'<img src="{self.get_image_x300().url}">',
+            )
+        return "изображения нет"
+
+    image_tmb.short_description = "превью (300x300)"
+    image_tmb.allow_tags = True
 
     class Meta:
         verbose_name = "дополнительное поле"

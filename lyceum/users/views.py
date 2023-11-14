@@ -28,6 +28,10 @@ def signup(request):
         if form.is_valid():
             user = form.save()
 
+            if django.conf.settings.DEFAULT_USER_IS_ACTIVE:
+                user.is_active = True
+                user.save()
+
             expiration = django.utils.timezone.now() + datetime.timedelta(
                 hours=django.conf.settings.LINK_EXPIRATION,
             )

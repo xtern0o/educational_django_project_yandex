@@ -11,6 +11,7 @@ __all__ = []
 class ProfileInline(django.contrib.admin.TabularInline):
     model = users.models.Profile
     can_delete = False
+    readonly_fields = (users.models.Profile.image_tmb,)
 
 
 class UserAdmin(django.contrib.auth.admin.UserAdmin):

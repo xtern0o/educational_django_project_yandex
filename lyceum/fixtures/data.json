@@ -1,461 +1,921 @@
 [
-    {
-      "model": "catalog.item",
-      "pk": 4,
-      "fields": {
-        "name": "fsfsdfdfs",
-        "is_published": true,
-        "text": "превосходно",
-        "is_on_main": false,
-        "category": 2,
-        "created_at": "2023-11-01T10:54:35.747Z",
-        "updated_at": "2023-11-01T10:55:14.860Z",
-        "tags": [
-          2
+  {
+     "model":"catalog.item",
+     "pk":4,
+     "fields":{
+        "name":"fsfsdfdfs",
+        "is_published":true,
+        "text":"превосходно",
+        "is_on_main":false,
+        "category":2,
+        "created_at":"2023-11-01T10:54:35.747Z",
+        "updated_at":"2023-11-01T10:55:14.860Z",
+        "tags":[
+           2
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 5,
-      "fields": {
-        "name": "ddfsfdsdfsfsd",
-        "is_published": false,
-        "text": "превосходно лоллол",
-        "is_on_main": false,
-        "category": 1,
-        "created_at": "2023-11-01T10:54:35.747Z",
-        "updated_at": "2023-11-01T10:55:14.860Z",
-        "tags": [
-          1
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":5,
+     "fields":{
+        "name":"ddfsfdsdfsfsd",
+        "is_published":false,
+        "text":"превосходно лоллол",
+        "is_on_main":false,
+        "category":1,
+        "created_at":"2023-11-01T10:54:35.747Z",
+        "updated_at":"2023-11-01T10:55:14.860Z",
+        "tags":[
+           1
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 6,
-      "fields": {
-        "name": "new item",
-        "is_published": true,
-        "text": "<p>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong></p>",
-        "is_on_main": true,
-        "category": 3,
-        "created_at": "2023-11-01T10:54:35.747Z",
-        "updated_at": "2023-11-01T10:55:14.860Z",
-        "tags": [
-          5
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":6,
+     "fields":{
+        "name":"new item",
+        "is_published":true,
+        "text":"<p>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong>fdssfddf <strong>превосходно</strong></p>",
+        "is_on_main":true,
+        "category":3,
+        "created_at":"2023-11-01T10:54:35.747Z",
+        "updated_at":"2023-11-01T10:55:14.860Z",
+        "tags":[
+           5
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 7,
-      "fields": {
-        "name": "fdkjflsfddfs",
-        "is_published": true,
-        "text": "<p><strong>превосходно!</strong></p>",
-        "is_on_main": true,
-        "category": 3,
-        "created_at": "2023-11-01T10:54:35.747Z",
-        "updated_at": "2023-11-01T10:55:14.860Z",
-        "tags": [
-          2,
-          3,
-          5
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":7,
+     "fields":{
+        "name":"fdkjflsfddfs",
+        "is_published":true,
+        "text":"<p><strong>превосходно!</strong></p>",
+        "is_on_main":true,
+        "category":3,
+        "created_at":"2023-11-01T10:54:35.747Z",
+        "updated_at":"2023-11-01T10:55:14.860Z",
+        "tags":[
+           2,
+           3,
+           5
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 8,
-      "fields": {
-        "name": "аыавваваывыаыва",
-        "is_published": false,
-        "text": "<p>роскошно товар!</p>",
-        "is_on_main": true,
-        "category": 4,
-        "created_at": "2023-11-01T10:54:35.747Z",
-        "updated_at": "2023-11-01T10:55:14.877Z",
-        "tags": [
-          2
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":8,
+     "fields":{
+        "name":"аыавваваывыаыва",
+        "is_published":false,
+        "text":"<p>роскошно товар!</p>",
+        "is_on_main":true,
+        "category":4,
+        "created_at":"2023-11-01T10:54:35.747Z",
+        "updated_at":"2023-11-01T10:55:14.877Z",
+        "tags":[
+           2
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 9,
-      "fields": {
-        "name": "айтем",
-        "is_published": true,
-        "text": "<p>роскошно&nbsp;роскошно</p>",
-        "is_on_main": true,
-        "category": 3,
-        "created_at": "2023-11-01T10:54:35.747Z",
-        "updated_at": "2023-11-01T10:55:14.860Z",
-        "tags": [
-          4,
-          1,
-          2,
-          3
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":9,
+     "fields":{
+        "name":"айтем",
+        "is_published":true,
+        "text":"<p>роскошно&nbsp;роскошно</p>",
+        "is_on_main":true,
+        "category":3,
+        "created_at":"2023-11-01T10:54:35.747Z",
+        "updated_at":"2023-11-01T10:55:14.860Z",
+        "tags":[
+           4,
+           1,
+           2,
+           3
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 10,
-      "fields": {
-        "name": "qweqwe",
-        "is_published": true,
-        "text": "<p>роскошно новый товар</p>",
-        "is_on_main": true,
-        "category": 3,
-        "created_at": "2023-11-01T11:28:58.583Z",
-        "updated_at": "2023-11-01T11:29:32.776Z",
-        "tags": [
-          1,
-          2,
-          3
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":10,
+     "fields":{
+        "name":"qweqwe",
+        "is_published":true,
+        "text":"<p>роскошно новый товар</p>",
+        "is_on_main":true,
+        "category":3,
+        "created_at":"2023-11-01T11:28:58.583Z",
+        "updated_at":"2023-11-01T11:29:32.776Z",
+        "tags":[
+           1,
+           2,
+           3
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 11,
-      "fields": {
-        "name": "6 паблик",
-        "is_published": true,
-        "text": "<p><u><em><strong>превосходно&nbsp;</strong></em></u></p>",
-        "is_on_main": false,
-        "category": 2,
-        "created_at": "2023-11-01T11:42:40.254Z",
-        "updated_at": "2023-11-01T11:42:50.775Z",
-        "tags": [
-          1,
-          3
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":11,
+     "fields":{
+        "name":"6 паблик",
+        "is_published":true,
+        "text":"<p><u><em><strong>превосходно&nbsp;</strong></em></u></p>",
+        "is_on_main":false,
+        "category":2,
+        "created_at":"2023-11-01T11:42:40.254Z",
+        "updated_at":"2023-11-01T11:42:50.775Z",
+        "tags":[
+           1,
+           3
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 12,
-      "fields": {
-        "name": "неподтвержденный",
-        "is_published": true,
-        "text": "<p style=\"text-align:center\"><u><strong>роскошно</strong></u></p>",
-        "is_on_main": false,
-        "category": 2,
-        "created_at": "2023-11-01T18:13:18.113Z",
-        "updated_at": "2023-11-01T18:13:18.113Z",
-        "tags": [
-          1,
-          2,
-          3
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":12,
+     "fields":{
+        "name":"неподтвержденный",
+        "is_published":true,
+        "text":"<p style=\"text-align:center\"><u><strong>роскошно</strong></u></p>",
+        "is_on_main":false,
+        "category":2,
+        "created_at":"2023-11-01T18:13:18.113Z",
+        "updated_at":"2023-11-01T18:13:18.113Z",
+        "tags":[
+           1,
+           2,
+           3
         ]
-      }
-    },
-    {
-      "model": "catalog.item",
-      "pk": 13,
-      "fields": {
-        "name": "funy kat",
-        "is_published": true,
-        "text": "<p><em>FUNNY роскошно CAT!</em></p>",
-        "is_on_main": true,
-        "category": 2,
-        "created_at": "2023-11-01T20:24:58.102Z",
-        "updated_at": "2023-11-01T20:24:58.102Z",
-        "tags": [
-          1,
-          5
+     }
+  },
+  {
+     "model":"catalog.item",
+     "pk":13,
+     "fields":{
+        "name":"funy kat",
+        "is_published":true,
+        "text":"<p><em>FUNNY роскошно CAT!</em></p>",
+        "is_on_main":true,
+        "category":2,
+        "created_at":"2023-11-01T20:24:58.102Z",
+        "updated_at":"2023-11-01T20:24:58.102Z",
+        "tags":[
+           1,
+           5
         ]
-      }
-    },
-    {
-      "model": "catalog.tag",
-      "pk": 1,
-      "fields": {
-        "name": "weqweqweq",
-        "is_published": true,
-        "slug": "weweqqwe",
-        "normalized_name": "weqweqweq"
-      }
-    },
-    {
-      "model": "catalog.tag",
-      "pk": 2,
-      "fields": {
-        "name": "wqeqewqweqwe",
-        "is_published": true,
-        "slug": "weqqwe",
-        "normalized_name": "wqeqewqweqwe"
-      }
-    },
-    {
-      "model": "catalog.tag",
-      "pk": 3,
-      "fields": {
-        "name": "новый тег",
-        "is_published": true,
-        "slug": "new-tag",
-        "normalized_name": "hobыйteг"
-      }
-    },
-    {
-      "model": "catalog.tag",
-      "pk": 4,
-      "fields": {
-        "name": "tag-1",
-        "is_published": true,
-        "slug": "tag-1",
-        "normalized_name": "tag1"
-      }
-    },
-    {
-      "model": "catalog.tag",
-      "pk": 5,
-      "fields": {
-        "name": "тег 2",
-        "is_published": true,
-        "slug": "tag-2",
-        "normalized_name": "teг2"
-      }
-    },
-    {
-      "model": "catalog.category",
-      "pk": 1,
-      "fields": {
-        "name": "ewewqeqwe",
-        "is_published": true,
-        "slug": "qweqwe",
-        "normalized_name": "ewewqeqwe",
-        "weight": 100
-      }
-    },
-    {
-      "model": "catalog.category",
-      "pk": 2,
-      "fields": {
-        "name": "weqqwe",
-        "is_published": true,
-        "slug": "ewqwe",
-        "normalized_name": "weqqwe",
-        "weight": 119
-      }
-    },
-    {
-      "model": "catalog.category",
-      "pk": 3,
-      "fields": {
-        "name": "категория 1",
-        "is_published": true,
-        "slug": "cat-1",
-        "normalized_name": "kateгopия1",
-        "weight": 100
-      }
-    },
-    {
-      "model": "catalog.category",
-      "pk": 4,
-      "fields": {
-        "name": "category-22",
-        "is_published": true,
-        "slug": "cat-3",
-        "normalized_name": "category22",
-        "weight": 100
-      }
-    },
-    {
-      "model": "catalog.category",
-      "pk": 5,
-      "fields": {
-        "name": "non public cat",
-        "is_published": false,
-        "slug": "non-pub",
-        "normalized_name": "nonpubliccat",
-        "weight": 100
-      }
-    },
-    {
-      "model": "catalog.category",
-      "pk": 6,
-      "fields": {
-        "name": "non-pubbb",
-        "is_published": true,
-        "slug": "eqwe",
-        "normalized_name": "nonpubbb",
-        "weight": 100
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 1,
-      "fields": {
-        "image": "catalog/2023/10/24/кот.jpg",
-        "item": 4
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 3,
-      "fields": {
-        "image": "catalog/2023/10/24/trash-bin_83mDrvG.png",
-        "item": 5
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 4,
-      "fields": {
-        "image": "catalog/2023/10/24/m00n.jpg",
-        "item": 6
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 5,
-      "fields": {
-        "image": "catalog/2023/10/29/wall.jpg",
-        "item": 7
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 6,
-      "fields": {
-        "image": "catalog/2023/10/29/hero.jpg",
-        "item": 8
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 7,
-      "fields": {
-        "image": "catalog/2023/10/29/letter-m.png",
-        "item": 9
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 8,
-      "fields": {
-        "image": "catalog/2023/11/01/volonter17.jpg",
-        "item": 10
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 9,
-      "fields": {
-        "image": "catalog/2023/11/01/krimskiy_most_005.jpg",
-        "item": 11
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 10,
-      "fields": {
-        "image": "catalog/2023/11/01/5656d35727009cabea6ce79973a9702c.jpeg",
-        "item": 12
-      }
-    },
-    {
-      "model": "catalog.mainimage",
-      "pk": 11,
-      "fields": {
-        "image": "catalog/2023/11/01/сфееее.jpg",
-        "item": 13
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 1,
-      "fields": {
-        "image": "catalog/2023/10/23/hero.jpg",
-        "item": 4
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 5,
-      "fields": {
-        "image": "catalog/2023/10/24/Flag_of_Russia.png",
-        "item": 6
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 6,
-      "fields": {
-        "image": "catalog/2023/10/24/wall.jpg",
-        "item": 6
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 7,
-      "fields": {
-        "image": "catalog/2023/10/30/3d62c126e1be1359828d58158e54da2e.jpg",
-        "item": 7
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 8,
-      "fields": {
-        "image": "catalog/2023/10/30/Pejzazh-2.jpg",
-        "item": 7
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 9,
-      "fields": {
-        "image": "catalog/2023/10/30/1666206281_64-mykaleidoscope-ru-p-kartinka-na-zastavku-oboi-65.jpg",
-        "item": 6
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 10,
-      "fields": {
-        "image": "catalog/2023/11/01/krasivye-kartinki-vysokogo-razresheniya-3.jpg",
-        "item": 11
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 11,
-      "fields": {
-        "image": "catalog/2023/11/01/кот.jpg",
-        "item": 11
-      }
-    },
-    {
-      "model": "catalog.gallery",
-      "pk": 12,
-      "fields": {
-        "image": "catalog/2023/11/01/Pejzazh-2.jpg",
-        "item": 12
-      }
-    },
-    {
-      "model": "users.profile",
-      "pk": 1,
-      "fields": {
-        "user": 2,
-        "birthday": "2006-01-09",
-        "image": "users/avatar_user_2.jpg",
-        "coffee_count": 5
-      }
-    },
-    {
-      "model": "users.profile",
-      "pk": 2,
-      "fields": {
-        "user": 1,
-        "birthday": null,
-        "image": "users/avatar_user_1.jpg",
-        "coffee_count": 0
-      }
-    }
-  ]
+     }
+  },
+  {
+     "model":"catalog.tag",
+     "pk":1,
+     "fields":{
+        "name":"weqweqweq",
+        "is_published":true,
+        "slug":"weweqqwe",
+        "normalized_name":"weqweqweq"
+     }
+  },
+  {
+     "model":"catalog.tag",
+     "pk":2,
+     "fields":{
+        "name":"wqeqewqweqwe",
+        "is_published":true,
+        "slug":"weqqwe",
+        "normalized_name":"wqeqewqweqwe"
+     }
+  },
+  {
+     "model":"catalog.tag",
+     "pk":3,
+     "fields":{
+        "name":"новый тег",
+        "is_published":true,
+        "slug":"new-tag",
+        "normalized_name":"hobыйteг"
+     }
+  },
+  {
+     "model":"catalog.tag",
+     "pk":4,
+     "fields":{
+        "name":"tag-1",
+        "is_published":true,
+        "slug":"tag-1",
+        "normalized_name":"tag1"
+     }
+  },
+  {
+     "model":"catalog.tag",
+     "pk":5,
+     "fields":{
+        "name":"тег 2",
+        "is_published":true,
+        "slug":"tag-2",
+        "normalized_name":"teг2"
+     }
+  },
+  {
+     "model":"catalog.category",
+     "pk":1,
+     "fields":{
+        "name":"ewewqeqwe",
+        "is_published":true,
+        "slug":"qweqwe",
+        "normalized_name":"ewewqeqwe",
+        "weight":100
+     }
+  },
+  {
+     "model":"catalog.category",
+     "pk":2,
+     "fields":{
+        "name":"weqqwe",
+        "is_published":true,
+        "slug":"ewqwe",
+        "normalized_name":"weqqwe",
+        "weight":119
+     }
+  },
+  {
+     "model":"catalog.category",
+     "pk":3,
+     "fields":{
+        "name":"категория 1",
+        "is_published":true,
+        "slug":"cat-1",
+        "normalized_name":"kateгopия1",
+        "weight":100
+     }
+  },
+  {
+     "model":"catalog.category",
+     "pk":4,
+     "fields":{
+        "name":"category-22",
+        "is_published":true,
+        "slug":"cat-3",
+        "normalized_name":"category22",
+        "weight":100
+     }
+  },
+  {
+     "model":"catalog.category",
+     "pk":5,
+     "fields":{
+        "name":"non public cat",
+        "is_published":false,
+        "slug":"non-pub",
+        "normalized_name":"nonpubliccat",
+        "weight":100
+     }
+  },
+  {
+     "model":"catalog.category",
+     "pk":6,
+     "fields":{
+        "name":"non-pubbb",
+        "is_published":true,
+        "slug":"eqwe",
+        "normalized_name":"nonpubbb",
+        "weight":100
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":1,
+     "fields":{
+        "image":"catalog/2023/10/24/кот.jpg",
+        "item":4
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":3,
+     "fields":{
+        "image":"catalog/2023/10/24/trash-bin_83mDrvG.png",
+        "item":5
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":4,
+     "fields":{
+        "image":"catalog/2023/10/24/m00n.jpg",
+        "item":6
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":5,
+     "fields":{
+        "image":"catalog/2023/10/29/wall.jpg",
+        "item":7
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":6,
+     "fields":{
+        "image":"catalog/2023/10/29/hero.jpg",
+        "item":8
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":7,
+     "fields":{
+        "image":"catalog/2023/10/29/letter-m.png",
+        "item":9
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":8,
+     "fields":{
+        "image":"catalog/2023/11/01/volonter17.jpg",
+        "item":10
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":9,
+     "fields":{
+        "image":"catalog/2023/11/01/krimskiy_most_005.jpg",
+        "item":11
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":10,
+     "fields":{
+        "image":"catalog/2023/11/01/5656d35727009cabea6ce79973a9702c.jpeg",
+        "item":12
+     }
+  },
+  {
+     "model":"catalog.mainimage",
+     "pk":11,
+     "fields":{
+        "image":"catalog/2023/11/01/сфееее.jpg",
+        "item":13
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":1,
+     "fields":{
+        "image":"catalog/2023/10/23/hero.jpg",
+        "item":4
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":5,
+     "fields":{
+        "image":"catalog/2023/10/24/Flag_of_Russia.png",
+        "item":6
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":6,
+     "fields":{
+        "image":"catalog/2023/10/24/wall.jpg",
+        "item":6
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":7,
+     "fields":{
+        "image":"catalog/2023/10/30/3d62c126e1be1359828d58158e54da2e.jpg",
+        "item":7
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":8,
+     "fields":{
+        "image":"catalog/2023/10/30/Pejzazh-2.jpg",
+        "item":7
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":9,
+     "fields":{
+        "image":"catalog/2023/10/30/1666206281_64-mykaleidoscope-ru-p-kartinka-na-zastavku-oboi-65.jpg",
+        "item":6
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":10,
+     "fields":{
+        "image":"catalog/2023/11/01/krasivye-kartinki-vysokogo-razresheniya-3.jpg",
+        "item":11
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":11,
+     "fields":{
+        "image":"catalog/2023/11/01/кот.jpg",
+        "item":11
+     }
+  },
+  {
+     "model":"catalog.gallery",
+     "pk":12,
+     "fields":{
+        "image":"catalog/2023/11/01/Pejzazh-2.jpg",
+        "item":12
+     }
+  },
+  {
+     "model":"users.profile",
+     "pk":1,
+     "fields":{
+        "user":2,
+        "birthday":"2006-01-09",
+        "image":"users/avatar_user_2.jpg",
+        "coffee_count":5
+     }
+  },
+  {
+     "model":"users.profile",
+     "pk":2,
+     "fields":{
+        "user":1,
+        "birthday":null,
+        "image":"users/avatar_user_1.jpg",
+        "coffee_count":0
+     }
+  },
+  {
+     "model":"users.profile",
+     "pk":3,
+     "fields":{
+        "user":19,
+        "birthday":null,
+        "image":"users/avatar_user_19.jpg",
+        "coffee_count":0
+     }
+  },
+  {
+     "model":"users.profile",
+     "pk":4,
+     "fields":{
+        "user":8,
+        "birthday":null,
+        "image":"users/avatar_user_8.jpg",
+        "coffee_count":1
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":1,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$gBqSUwfViYbdU8LcHwFaAy$jLt4c2fV4oMP4SS11KMOdZq8vTylppyeKC3kkOCP5qo=",
+        "last_login":"2023-10-23T19:30:27Z",
+        "is_superuser":true,
+        "username":"maks0",
+        "first_name":"Максим",
+        "last_name":"Карнажицкий",
+        "email":"maks060109@ya.ru",
+        "is_staff":true,
+        "is_active":true,
+        "date_joined":"2023-10-23T19:29:48Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":2,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$MHWcgOZf9quzRpdwAr8JCz$/dVVeM7GbYtC0m09/GFrs12kGOV5TZhe4iW8akxki7Q=",
+        "last_login":"2023-11-14T20:26:34.523Z",
+        "is_superuser":true,
+        "username":"maxkarn",
+        "first_name":"Макс",
+        "last_name":"Карн",
+        "email":"maks060109@ya.ru",
+        "is_staff":true,
+        "is_active":true,
+        "date_joined":"2023-11-07T13:19:55Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":3,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$B52ievGbDw9hbu4fhylpUS$2L7kIjalL/6xFrpZLvPJ3kuigebUTiPGzzTRin62vhY=",
+        "last_login":null,
+        "is_superuser":false,
+        "username":"new_user_hello",
+        "first_name":"",
+        "last_name":"",
+        "email":"new_user_hello@new.new",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T19:24:53.140Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":4,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$Kks5TYAyZ7U3R37m9ihjOD$IEf2IWeh+nx+5Z04In6ux3//+tcecjh+t0OPaXVNicQ=",
+        "last_login":null,
+        "is_superuser":false,
+        "username":"new_user_hello_hello",
+        "first_name":"",
+        "last_name":"",
+        "email":"new_user_hello@new.new",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T19:26:04.098Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":5,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$P1lgKhiKUnenQZngSl95wu$hjAqkZuE+El4rcW7GNB1hdU0Biboon4z59peXXetyXo=",
+        "last_login":null,
+        "is_superuser":false,
+        "username":"karmaxx",
+        "first_name":"",
+        "last_name":"",
+        "email":"karmaxx@dd.dd",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T19:27:00.119Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":6,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$5K3cwVODC7hwXPLO6ByAJM$Xs6g9O3CXYrhJPdhTfyjBEmx8tOvBglrESDW0NQjGaM=",
+        "last_login":null,
+        "is_superuser":false,
+        "username":"kakakaka",
+        "first_name":"",
+        "last_name":"",
+        "email":"kakakaka@ka.ka",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T19:38:40.662Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":7,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$aICzo6gvDsUbQHt0cN3Bkz$pTqbE2a8Ly+1j/ROwqwOM4/WxwgclhaadY2CzwN5nxQ=",
+        "last_login":null,
+        "is_superuser":false,
+        "username":"kokokokokoko",
+        "first_name":"",
+        "last_name":"",
+        "email":"kokoko@koko.kok",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T19:40:50.131Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":8,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$fV1fbeAsiobdXWKnqyRnyz$NCeWjinb7niPXmdeilAK4RpcWQFajvq8z8geb8z09JM=",
+        "last_login":"2023-11-14T20:26:56.576Z",
+        "is_superuser":false,
+        "username":"koooooooooooooooooooooooooooooo",
+        "first_name":"",
+        "last_name":"",
+        "email":"koookokoooo@koko.kk",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T19:45:00Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":9,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$GcLLI8GFRfBPiLJrl93a0H$1gqeeoOfyzP3OSamXXgf8sQe9ZHbZQhAFvZaEiYB/lM=",
+        "last_login":null,
+        "is_superuser":false,
+        "username":"kooooooo",
+        "first_name":"",
+        "last_name":"",
+        "email":"kokoofod@dffds.gb",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T19:48:44.551Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":10,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$ahP5hNhM2rjzccnbO5lEU6$ozYAVd5ggssWJI9B+B6KxIzPh7u1EyLDQ/8cFWAytFQ=",
+        "last_login":"2023-11-13T19:49:50.117Z",
+        "is_superuser":false,
+        "username":"koooooooo",
+        "first_name":"",
+        "last_name":"",
+        "email":"kokoofodd@dffds.gb",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T19:49:49.660Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":11,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$xihfTYlFH3LTWe76asGTot$Bh7jsqA+nio0dkNDXJRCsEusgJmW2NBQ2yr8hlEXxCM=",
+        "last_login":"2023-11-13T20:47:12.555Z",
+        "is_superuser":false,
+        "username":"qweqweqweqwewqe",
+        "first_name":"",
+        "last_name":"",
+        "email":"wqeqweqe@qwe.ew",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-13T20:40:59.286Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":12,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$RilhEqEauUvbzdl65LRFII$x8xuJsPdMz1Lovx/kQXdm5vC2HXJ/uDqOuSPtAHQD8c=",
+        "last_login":"2023-11-14T20:24:24.811Z",
+        "is_superuser":false,
+        "username":"irinakarn",
+        "first_name":"",
+        "last_name":"",
+        "email":"irinkakarn80@ya.ru",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T12:52:15.873Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":13,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$vRnklh3JJ2osgS6FeYcAzr$vg/YqBtm9equ3HXugS+hTfLPiEPBUbSb1IpLh77Pw18=",
+        "last_login":"2023-11-14T13:00:30.635Z",
+        "is_superuser":false,
+        "username":"dfddfsdfsdfdfsdfs",
+        "first_name":"",
+        "last_name":"",
+        "email":"fdsdfs@fsfddsfdfs.dfs",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T13:00:30.241Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":14,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$uA85M7ZkeyKQjIDV1WStmV$cqp6q0jmqkRYLD8sLqEKaKGeZg0bHwjY7OD/OcPf6H0=",
+        "last_login":"2023-11-14T13:13:44.115Z",
+        "is_superuser":false,
+        "username":"wqeqweqweeqwqweqwe",
+        "first_name":"",
+        "last_name":"",
+        "email":"qweqw@dsdsa.ds",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T13:13:43.721Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":15,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$Y0sOfLonkBA26CG02OPWoN$nC7mK13wwL4mGBaUp1vOpECdSULLq8SiCTi42rW54AI=",
+        "last_login":"2023-11-14T14:27:32.226Z",
+        "is_superuser":false,
+        "username":"daasddassaeas",
+        "first_name":"",
+        "last_name":"",
+        "email":"dssad@df.tr",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T14:27:31.118Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":16,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$8h2aZZ9YSOWP2X4l1eXyAC$WT4FxidPbNFOh5MgAUSFOJZS8Gulpn7MTSKPG6O+qoM=",
+        "last_login":"2023-11-14T14:44:10.090Z",
+        "is_superuser":false,
+        "username":"akorutank",
+        "first_name":"",
+        "last_name":"",
+        "email":"akorutant@yandex.ru",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T14:44:08.322Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":17,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$QjVXS00Gy4o1Jze6BPtlnL$yXUr2S1GDCGWOYSWuw88ig93lHxMbi6sjwJxt6L9SOE=",
+        "last_login":"2023-11-14T15:41:58.139Z",
+        "is_superuser":false,
+        "username":"rwerrx",
+        "first_name":"",
+        "last_name":"",
+        "email":"kira09030@yandex.ru",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T15:41:57.033Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":18,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$uT2kRcqfbPnuUwYIw3StzT$ATVoxolEO/56xlf7v5dExb0WAB4UCHBve9VtaIlkyhY=",
+        "last_login":null,
+        "is_superuser":false,
+        "username":"dadadsadsadsadsa",
+        "first_name":"",
+        "last_name":"",
+        "email":"adsads@ddas.ds",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T20:20:25.278Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":19,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$gzOviRDlqhDazxDUeawunU$YahWEe81ekIkXoDwXvyZ2Oh4dlzyDoH5SPG+bIDi2X8=",
+        "last_login":"2023-11-14T20:20:54Z",
+        "is_superuser":false,
+        "username":"dacxcxdadsadsacxcxsadsacxcxcxcx",
+        "first_name":"",
+        "last_name":"",
+        "email":"adsads@ddas.ds",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T20:20:54Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  },
+  {
+     "model":"auth.user",
+     "pk":20,
+     "fields":{
+        "password":"pbkdf2_sha256$600000$i90vv8Sy1vUux2t7Xx7bk6$MAG9r26tRNlCDviMNqeFkBQvJbMzXd+XVnrjqZ280NQ=",
+        "last_login":"2023-11-14T20:22:41.787Z",
+        "is_superuser":false,
+        "username":"jkfdnkmf",
+        "first_name":"",
+        "last_name":"",
+        "email":"dsh2jfk@fd.fd",
+        "is_staff":false,
+        "is_active":true,
+        "date_joined":"2023-11-14T20:22:41.370Z",
+        "groups":[
+           
+        ],
+        "user_permissions":[
+           
+        ]
+     }
+  }
+]
