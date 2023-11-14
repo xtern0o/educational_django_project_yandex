@@ -3,12 +3,16 @@
 
 <div class="container">
   <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
-    <a href="{% url 'homepage:home' %}" class="fs-3 fw-bold text-white text-decoration-none">
-      <img class="bi me-2" width="32" height="32" src="{% static "img/trash-bin.png" %}">
-      {% translate "shop_name"%}
-    </a>
+    <div class="col-md-3 mb-2 mb-md-0">
+      <a href="{% url 'homepage:home' %}" class="fs-3 fw-bold text-white text-decoration-none">
+        <img class="bi me-2" width="32" height="32" src="{% static "img/trash-bin.png" %}">
+        {% translate "shop_name"%}
+      </a>
+    </div>
+
     {% with request.resolver_match.view_name as view_name %}
-      <ul class="nav nav-pills">
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li class="nav-item">
           <a href="{% url 'homepage:home' %}" class="nav-link px-3 {% if view_name == 'homepage:home' %}text-secondary disabled{% else %}text-white{% endif %}">{% translate "main_page" %}</a>
         </li>
@@ -21,12 +25,33 @@
         <li class="nav-item">
           <a href="{% url 'feedback:feedback' %}" class="nav-link px-3 {% if view_name == 'feedback:feedback' %}text-secondary disabled{% else %}text-white{% endif %}">{% translate "feedback" %}</a>
         </li>
+
         {% if user.is_superuser %}
+
         <li class="nav-item">
           <a href="{% url 'admin:index' %}" class="nav-link px-3">{% translate "admin" %}</a>
         </li>
+
         {% endif %}
+      
       </ul>
+
     {% endwith %}
+
+    <div class="col-md-3 text-end">
+
+      {% if not user.is_active %}
+
+      <a class="btn btn-sm btn-outline-success" href="{% url 'users:signup' %}">Зарегистрироваться</a>
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'users:login' %}">Войти</a>
+
+      {% else %}
+
+      <a class="text-decoration-none text-light fw-bold" href="{% url 'users:profile' %}">{{ user.username }}</a>
+      <a class="mx-2 btn btn-sm btn-outline-danger" href="{% url 'users:logout' %}">Выйти</a>
+
+      {% endif %}
+      
+    </div>
   </div>
 </div>

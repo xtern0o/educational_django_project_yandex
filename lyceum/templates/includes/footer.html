@@ -3,10 +3,10 @@
 
 <div class="p-3 my-4 mb-0">
   <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-    <li class="nav-item"><a href="{% url "homepage:home" %}" class="nav-link px-2 text-muted">{% translate "main_page" %}</a></li>
-    <li class="nav-item"><a href="{% url "catalog:item_list" %}" class="nav-link px-2 text-muted">{% translate "list_of_items" %}</a></li>
-    <li class="nav-item"><a href="{% url "about:description" %}" class="nav-link px-2 text-muted">{% translate "about" %}</a></li>
-    <li class="nav-item"><a href="{% url "feedback:feedback" %}" class="nav-link px-2 text-muted">{% translate "feedback" %}</a></li>
+    <li class="nav-item"><a href="{% url 'homepage:home' %}" class="nav-link px-2 text-muted">{% translate "main_page" %}</a></li>
+    <li class="nav-item"><a href="{% url 'catalog:item_list' %}" class="nav-link px-2 text-muted">{% translate "list_of_items" %}</a></li>
+    <li class="nav-item"><a href="{% url 'about:description' %}" class="nav-link px-2 text-muted">{% translate "about" %}</a></li>
+    <li class="nav-item"><a href="{% url 'feedback:feedback' %}" class="nav-link px-2 text-muted">{% translate "feedback" %}</a></li>
   </ul>
   <div class="row">
     <div class="col">
@@ -20,8 +20,7 @@
         const timeDifference = Math.abs(clientTime - serverTime);
         const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
         
-        // заменяем время только в случае если разница не более 24 часов
-        if (hoursDifference <= 24) {
+        if (hoursDifference > 24) {
             footerText.textContent = clientTime.getFullYear()
         }
       </script>

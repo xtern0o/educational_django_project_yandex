@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "download.apps.DownloadConfig",
     "feedback.apps.FeedbackConfig",
     "homepage.apps.HomepageConfig",
+    "users.apps.UsersConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "sorl.thumbnail",
     "django_cleanup.apps.CleanupConfig",
+    "widget_tweaks",
     "ckeditor",
 ]
 
@@ -113,6 +115,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = "/auth/login"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/auth/login"
+
+if DEBUG:
+    DEFAULT_USER_IS_ACTIVE = True
+else:
+    DEFAULT_USER_IS_ACTIVE = load_bool_env("DEFAULT_USER_IS_ACTIVE", False)
+
 
 LANGUAGE_CODE = "ru"
 LANGUAGES = [
@@ -171,3 +182,5 @@ CKEDITOR_CONFIGS = {
 EMAIL_ADDRESS = os.getenv("DJANGO_MAIL", "NO-MAIL")
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / "send_mail"
+
+LINK_EXPIRATION = int(os.getenv("LINK_EXPIRATION", 12))

@@ -1,3 +1,5 @@
+import http
+
 import django.http
 import django.shortcuts
 
@@ -18,7 +20,14 @@ def home(request):
 
 
 def coffee(request):
-    return django.http.HttpResponse("Я чайник", status=418)
+    if request.user.is_authenticated:
+        request.user.profile.coffee_count += 1
+        request.user.profile.save()
+
+    return django.http.HttpResponse(
+        "Я чайник",
+        status=http.HTTPStatus.IM_A_TEAPOT,
+    )
 
 
 def echo(request):

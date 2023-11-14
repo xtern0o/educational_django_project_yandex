@@ -4,7 +4,7 @@ from django.apps import AppConfig
 __all__ = []
 
 
-class DownloadConfig(AppConfig):
+class UsersConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "download"
-    verbose_name = "загрузка"
+    name = "users"
+    verbose_name = "пользователи"
