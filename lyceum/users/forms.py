@@ -27,6 +27,9 @@ class ProfileEditForm(django.forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields[
+            users.models.Profile.coffee_count.field.name
+        ].disabled = True
+        self.fields[
             users.models.Profile.birthday.field.name
         ].widget = django.forms.fields.TextInput(
             {
@@ -40,17 +43,15 @@ class ProfileEditForm(django.forms.ModelForm):
         fields = [
             users.models.Profile.birthday.field.name,
             users.models.Profile.image.field.name,
+            users.models.Profile.coffee_count.field.name,
         ]
 
 
-class UserEditForm(django.forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.visible_fields():
-            field.field.widget.attrs["class"] = "form-control"
+class UserEditForm(django.contrib.auth.forms.UserChangeForm):
+    password = None
 
-    class Meta:
-        model = django.contrib.auth.models.User
+    class Meta(django.contrib.auth.forms.UserChangeForm.Meta):
+        model = users.models.ProxyUser
 
         fields = [
             django.contrib.auth.models.User.first_name.field.name,
