@@ -103,7 +103,7 @@
       </div>
     </form>
     <div class="my-2 d-grid gap-2">
-      <a class="btn btn-warning" href="{% url 'homepage:coffee' %}">Выпить кофе <span class="badge text-bg-dark rounded-pill">{{ user.profile.coffee_count|default:"0" }}</span></a>
+      <a class="btn btn-warning" href="{% url 'homepage:coffee' %}">Выпить кофе <span class="badge text-bg-dark rounded-pill">{{ coffee_count|default:"0" }}</span></a>
     </div>
   </div>
 </div>

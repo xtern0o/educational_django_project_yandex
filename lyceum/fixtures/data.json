@@ -599,7 +599,7 @@
       "user": 2,
       "birthday": "2006-01-09",
       "image": "users/avatar_user_2.jpg",
-      "coffee_count": 6
+      "coffee_count": 7
     }
   },
   {
@@ -633,10 +633,20 @@
     }
   },
   {
+    "model": "users.profile",
+    "pk": 5,
+    "fields": {
+      "user": 21,
+      "birthday": "2023-11-10",
+      "image": "",
+      "coffee_count": 0
+    }
+  },
+  {
     "model": "auth.user",
     "pk": 1,
     "fields": {
-      "password": "pbkdf2_sha256$600000$gBqSUwfViYbdU8LcHwFaAy$jLt4c2fV4oMP4SS11KMOdZq8vTylppyeKC3kkOCP5qo=",
+      "password": "pbkdf2_sha256$600000$8HHrH5NjZ3KlIzfNekHDXB$v6apJNN25Vrfz4J+7N6S78VUbf4pH8QYe/UzyYsljPQ=",
       "last_login": "2023-10-23T19:30:27Z",
       "is_superuser": true,
       "username": "maks0",
@@ -709,7 +719,7 @@
     "pk": 5,
     "fields": {
       "password": "pbkdf2_sha256$600000$P1lgKhiKUnenQZngSl95wu$hjAqkZuE+El4rcW7GNB1hdU0Biboon4z59peXXetyXo=",
-      "last_login": null,
+      "last_login": "2023-11-15T07:22:08.694Z",
       "is_superuser": false,
       "username": "karmaxx",
       "first_name": "",
@@ -988,6 +998,24 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2023-11-14T20:22:41.370Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 21,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$pHhPZG4yX1WMsCc9P3T85k$wq9YPVs5800JA7wNarx0Fwu5ATfb92RCcgsp4JIbajQ=",
+      "last_login": "2023-11-15T07:24:42.756Z",
+      "is_superuser": false,
+      "username": "123qwe123",
+      "first_name": "ячсds",
+      "last_name": "ячссяч",
+      "email": "zxczxc@zxc.zxc",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-11-15T07:24:41.452Z",
       "groups": [],
       "user_permissions": []
     }

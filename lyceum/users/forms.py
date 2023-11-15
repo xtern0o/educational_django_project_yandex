@@ -16,10 +16,11 @@ class SignUpForm(django.contrib.auth.forms.UserCreationForm):
 
     class Meta:
         model = django.contrib.auth.models.User
-        fields = (
+
+        fields = [
             django.contrib.auth.models.User.username.field.name,
             django.contrib.auth.models.User.email.field.name,
-        )
+        ]
 
 
 class ProfileEditForm(django.forms.ModelForm):
@@ -35,10 +36,11 @@ class ProfileEditForm(django.forms.ModelForm):
 
     class Meta:
         model = users.models.Profile
-        fields = (
+
+        fields = [
             users.models.Profile.birthday.field.name,
             users.models.Profile.image.field.name,
-        )
+        ]
 
 
 class UserEditForm(django.forms.ModelForm):
@@ -48,9 +50,10 @@ class UserEditForm(django.forms.ModelForm):
             field.field.widget.attrs["class"] = "form-control"
 
     class Meta:
-        model = users.models.ProxyUser
-        fields = (
-            users.models.ProxyUser.first_name.field.name,
-            users.models.ProxyUser.last_name.field.name,
-            users.models.ProxyUser.email.field.name,
-        )
+        model = django.contrib.auth.models.User
+
+        fields = [
+            django.contrib.auth.models.User.first_name.field.name,
+            django.contrib.auth.models.User.last_name.field.name,
+            django.contrib.auth.models.User.email.field.name,
+        ]

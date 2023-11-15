@@ -63,21 +63,21 @@ urlpatterns = [
         name="password_reset",
     ),
     django.urls.path(
-        "password_reset/done/",
+        "reset/done/",
         django.contrib.auth.views.PasswordResetDoneView.as_view(
             template_name="users/password_reset_done.html",
         ),
         name="password_reset_done",
     ),
     django.urls.path(
-        "password_reset/confirm/",
+        "reset/<uidb64>/<token>/",
         django.contrib.auth.views.PasswordResetConfirmView.as_view(
             template_name="users/password_reset_confirm.html",
         ),
         name="password_reset_confirm",
     ),
     django.urls.path(
-        "password_reset/complete/",
+        "reset/complete/",
         django.contrib.auth.views.PasswordResetCompleteView.as_view(
             template_name="users/password_reset_complete.html",
         ),

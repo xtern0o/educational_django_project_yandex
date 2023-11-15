@@ -27,6 +27,9 @@ def signup(request):
     if request.method == "POST":
         if form.is_valid():
             user = form.save()
+            users.models.Profile.objects.create(
+                user=user,
+            )
 
             if django.conf.settings.DEFAULT_USER_IS_ACTIVE:
                 user.is_active = True
@@ -166,5 +169,6 @@ def profile(request):
     context = {
         "user_form": user_form,
         "profile_form": profile_form,
+        "coffee_count": user.profile.coffee_count,
     }
     return django.shortcuts.render(request, template, context)
