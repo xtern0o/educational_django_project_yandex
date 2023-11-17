@@ -77,7 +77,9 @@ def signup(request):
             )
 
             django.contrib.auth.login(
-                request, user, backend="users.backends.LoginBackend"
+                request,
+                user,
+                backend="users.backends.LoginBackend",
             )
             return django.shortcuts.redirect(
                 django.urls.reverse("homepage:home"),

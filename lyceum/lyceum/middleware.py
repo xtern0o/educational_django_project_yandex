@@ -4,8 +4,6 @@ import django.conf
 import django.contrib.auth.models
 import django.utils.deprecation
 
-import users.models
-
 
 __all__ = []
 
@@ -41,22 +39,3 @@ class ReverseRussianWordsMiddleware(django.utils.deprecation.MiddlewareMixin):
                 new_words.append(word)
         pattern = re.compile(r"\b(" + "|".join(map(re.escape, words)) + r")\b")
         return pattern.sub(lambda x: new_words.pop(0), s)
-
-
-class ProxyUserMiddleware(django.utils.deprecation.MiddlewareMixin):
-    def __init__(self, get_response):
-        self.get_response = get_response
-        self.model = users.models.ProxyUser
-
-    def __call__(self, request):
-        try:
-            proxy_user = users.models.ProxyUser.objects.get(
-                pk=request.user.pk,
-            )
-            request.user = proxy_user
-        except users.models.ProxyUser.DoesNotExist:
-            pass
-
-        response = self.get_response(request)
-
-        return response
