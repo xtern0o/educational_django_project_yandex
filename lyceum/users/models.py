@@ -1,4 +1,5 @@
 import pathlib
+import sys
 
 import django.contrib.auth.models
 import django.db
@@ -7,7 +8,8 @@ import sorl
 
 __all__ = []
 
-django.contrib.auth.models.User._meta.get_field("email")._unique = True
+if "makemigrations" not in sys.argv and "migrate" not in sys.argv:
+    django.contrib.auth.models.User._meta.get_field("email")._unique = True
 
 
 class UserManager(django.contrib.auth.models.UserManager):
