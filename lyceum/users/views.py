@@ -76,7 +76,9 @@ def signup(request):
                 [user.email],
             )
 
-            django.contrib.auth.login(request, user)
+            django.contrib.auth.login(
+                request, user, backend="users.backends.LoginBackend"
+            )
             return django.shortcuts.redirect(
                 django.urls.reverse("homepage:home"),
             )
@@ -110,7 +112,7 @@ def activate_user(request, token):
 
 def user_list(request):
     template = "users/user_list.html"
-    active_users = users.models.ProxyUser.objects.get_active_users().all()
+    active_users = users.models.ProxyUser.objects.active().all()
     context = {
         "users": active_users,
     }

@@ -2,6 +2,7 @@ import django.db.models.query
 import django.test
 import django.urls
 import django.utils.timezone
+import freezegun
 import parameterized
 
 import catalog.models
@@ -14,74 +15,88 @@ class ContextTests(django.test.TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.published_category = catalog.models.Category(
-            is_published=True,
-            name="Published category",
-            slug="pub-cat",
-        )
-        cls.unpublished_category = catalog.models.Category(
-            is_published=False,
-            name="Unpublished category",
-            slug="unpub-cat",
-        )
 
-        cls.published_tag = catalog.models.Tag(
-            is_published=True,
-            name="Published tag",
-            slug="pub-tag",
-        )
-        cls.unpublished_tag = catalog.models.Tag(
-            is_published=True,
-            name="Unpublished tag",
-            slug="unpub-tag",
-        )
+        with freezegun.freeze_time("01-01-2023"):
+            cls.published_category = catalog.models.Category(
+                is_published=True,
+                name="Published category",
+                slug="pub-cat",
+            )
+            cls.unpublished_category = catalog.models.Category(
+                is_published=False,
+                name="Unpublished category",
+                slug="unpub-cat",
+            )
 
-        cls.published_item = catalog.models.Item(
-            name="Published item",
-            category=cls.published_category,
-            text="роскошно",
-        )
+            cls.published_tag = catalog.models.Tag(
+                is_published=True,
+                name="Published tag",
+                slug="pub-tag",
+            )
+            cls.unpublished_tag = catalog.models.Tag(
+                is_published=True,
+                name="Unpublished tag",
+                slug="unpub-tag",
+            )
 
-        cls.published_item_on_main = catalog.models.Item(
-            name="Published on main item",
-            category=cls.published_category,
-            text="роскошно",
-            is_on_main=True,
-        )
-        cls.unpublished_item = catalog.models.Item(
-            name="Unpublished item",
-            category=cls.unpublished_category,
-            text="роскошно",
-        )
-        cls.unpublished_item_on_main = catalog.models.Item(
-            name="Unpublished on main item",
-            category=cls.unpublished_category,
-            text="роскошно",
-            is_on_main=True,
-        )
+            cls.published_category.clean()
+            cls.unpublished_category.clean()
+            cls.published_tag.clean()
+            cls.unpublished_tag.clean()
 
-        cls.published_category.clean()
-        cls.unpublished_category.clean()
-        cls.published_tag.clean()
-        cls.unpublished_tag.clean()
-        cls.published_item.clean()
-        cls.published_item_on_main.clean()
-        cls.unpublished_item.clean()
-        cls.unpublished_item_on_main.clean()
+            cls.published_category.save()
+            cls.unpublished_category.save()
+            cls.published_tag.save()
+            cls.unpublished_tag.save()
 
-        cls.published_category.save()
-        cls.unpublished_category.save()
-        cls.published_tag.save()
-        cls.unpublished_tag.save()
-        cls.published_item.save()
-        cls.published_item_on_main.save()
-        cls.unpublished_item.save()
-        cls.unpublished_item_on_main.save()
+            cls.published_item = catalog.models.Item(
+                name="Published item",
+                category=cls.published_category,
+                text="роскошно",
+            )
 
-        cls.published_item.tags.add(cls.published_tag)
-        cls.published_item_on_main.tags.add(cls.published_tag)
-        cls.unpublished_item.tags.add(cls.unpublished_tag)
-        cls.unpublished_item_on_main.tags.add(cls.unpublished_tag)
+            cls.published_item_on_main = catalog.models.Item(
+                name="Published on main item",
+                category=cls.published_category,
+                text="роскошно",
+                is_on_main=True,
+            )
+            cls.unpublished_item = catalog.models.Item(
+                name="Unpublished item",
+                category=cls.unpublished_category,
+                text="роскошно",
+            )
+            cls.unpublished_item_on_main = catalog.models.Item(
+                name="Unpublished on main item",
+                category=cls.unpublished_category,
+                text="роскошно",
+                is_on_main=True,
+            )
+
+            cls.published_item.clean()
+            cls.published_item_on_main.clean()
+            cls.unpublished_item.clean()
+            cls.unpublished_item_on_main.clean()
+
+            cls.published_item.save()
+            cls.published_item_on_main.save()
+            cls.unpublished_item.save()
+            cls.unpublished_item_on_main.save()
+
+            cls.published_item.tags.add(cls.published_tag)
+            cls.published_item_on_main.tags.add(cls.published_tag)
+            cls.unpublished_item.tags.add(cls.unpublished_tag)
+            cls.unpublished_item_on_main.tags.add(cls.unpublished_tag)
+
+        with freezegun.freeze_time("01-06-2023"):
+            cls.published_item_friday = catalog.models.Item(
+                name="Published item Friday",
+                category=cls.published_category,
+                text="роскошно fd",
+            )
+            cls.published_item_friday.clean()
+            cls.published_item_friday.save()
+            cls.published_item_friday.tags.add(cls.published_tag)
 
     @classmethod
     def tearDownClass(cls):
@@ -93,6 +108,7 @@ class ContextTests(django.test.TestCase):
         cls.published_item.delete()
         cls.published_item_on_main.delete()
         cls.unpublished_item.delete()
+        cls.published_item_friday.delete()
 
     @parameterized.parameterized.expand(
         [
@@ -122,7 +138,7 @@ class ContextTests(django.test.TestCase):
     @parameterized.parameterized.expand(
         [
             ("homepage:home", 1),
-            ("catalog:item_list", 2),
+            ("catalog:item_list", 3),
         ],
     )
     def test_published_item_count(self, app_url, correct_count):
@@ -156,21 +172,18 @@ class ContextTests(django.test.TestCase):
             django.urls.reverse("catalog:items_new"),
         )
         items = response.context["items"]
-        self.assertEqual(len(items), 2)
+        self.assertEqual(len(items), 0)
 
     def test_context_friday(self):
         response = django.test.Client().get(
             django.urls.reverse("catalog:items_friday"),
         )
         items = response.context["items"]
-        if django.utils.timezone.now().weekday() == 6:
-            self.assertEqual(len(items), 2)
-        else:
-            self.assertEqual(len(items), 0)
+        self.assertEqual(len(items), 1)
 
     def test_context_unverified(self):
         response = django.test.Client().get(
             django.urls.reverse("catalog:items_unverified"),
         )
         items = response.context["items"]
-        self.assertEqual(len(items), 2)
+        self.assertEqual(len(items), 3)

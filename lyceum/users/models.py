@@ -7,9 +7,11 @@ import sorl
 
 __all__ = []
 
+django.contrib.auth.models.User._meta.get_field("email")._unique = True
+
 
 class UserManager(django.contrib.auth.models.UserManager):
-    def get_active_users(self):
+    def active(self):
         return (
             self.get_queryset().filter(is_active=True).only("id", "username")
         )
@@ -27,6 +29,9 @@ class UserManager(django.contrib.auth.models.UserManager):
                 "profile__coffee_count",
             )
         )
+
+    def by_mail(self, email):
+        return self.get_queryset().get(email=email)
 
 
 class Profile(django.db.models.Model):

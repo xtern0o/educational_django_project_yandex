@@ -60,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "lyceum.middleware.ReverseRussianWordsMiddleware",
+    "lyceum.middleware.ProxyUserMiddleware",
 ]
 
 if DEBUG:
@@ -118,6 +119,11 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGIN_URL = "/auth/login"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/auth/login"
+
+AUTHENTICATION_BACKENDS = [
+    "users.backends.LoginBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
 
 if DEBUG:
     DEFAULT_USER_IS_ACTIVE = True
